@@ -72,4 +72,37 @@ public class ApdexTest {
 
         assertEquals(rotuloEsperado, rotuloCalculado);
     }
+
+    @Test
+    public void deveRetornarRotuloBomParaScoreBom() {
+        double score = 0.90;
+        String rotuloEsperado = "Bom";
+        String rotuloCalculado = apdex.getRotulo(score);
+        assertEquals(rotuloEsperado, rotuloCalculado);
+    }
+
+    @Test
+    public void deveRetornarRotuloRazoavelParaScoreRazoavel() {
+        double score = 0.80;
+        String rotuloEsperado = "Razoável";
+        String rotuloCalculado = apdex.getRotulo(score);
+        assertEquals(rotuloEsperado, rotuloCalculado);
+    }
+
+    @Test
+    public void deveRetornarRotuloRuimParaScoreRuim() {
+        double score = 0.60;
+        String rotuloEsperado = "Ruim";
+        String rotuloCalculado = apdex.getRotulo(score);
+        assertEquals(rotuloEsperado, rotuloCalculado);
+    }
+
+    @Test
+    public void deveRetornarRotuloInaceitavelParaScoreInaceitavel() {
+        double score = 0.40;
+        String rotuloEsperado = "Inaceitável";
+        String rotuloCalculado = apdex.getRotulo(score);
+        assertEquals(rotuloEsperado, rotuloCalculado);
+    }
+
 }

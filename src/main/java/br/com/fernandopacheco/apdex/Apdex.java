@@ -10,7 +10,14 @@ public class Apdex {
     public String getRotulo(double score) {
         if (score >= 0.94) {
             return "Excelente";
+        } else if (score >= 0.85) {
+            return "Bom";
+        } else if (score >= 0.70) {
+            return "Razoável";
+        } else if (score >= 0.50) {
+            return "Ruim";
+        } else {
+            return "Inaceitável";
         }
-        return null;
     }
 }
