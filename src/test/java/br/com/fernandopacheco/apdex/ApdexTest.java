@@ -63,4 +63,13 @@ public class ApdexTest {
         double apdexCalculado = apdex.calcularApdex(s, t, totalAmostras);
         assertEquals(apdexEsperado, apdexCalculado, 0.001);
     }
+    @Test
+    public void deveRetornarRotuloExcelenteParaScoreExcelente() {
+        double scoreExcelente = 0.95;
+        String rotuloEsperado = "Excelente";
+
+        String rotuloCalculado = apdex.getRotulo(scoreExcelente);
+
+        assertEquals(rotuloEsperado, rotuloCalculado);
+    }
 }
